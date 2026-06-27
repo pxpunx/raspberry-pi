@@ -1,0 +1,275 @@
+# Product Information
+
+| Product | [KIOXIA BG4 Series](https://americas.kioxia.com/en-us/business/ssd/client-ssd/bg4.html) |
+|:-|:-|
+|----|----|
+| *Name* | KIOXIA BG4 |
+| *Model* | KBG40ZNS128G |
+| *Capacity* | 128GB |
+| *Form Factor* | M.2 2230 |
+| *Key* | M |
+| *Interface* | NVMe |
+| *Controller* | Custom Kioxia |
+| *NAND* | 96L BiCS 4 3D TLC |
+| *DRAM* | - |
+| *Boot Disk* | :white_check_mark: |
+| *Non-Boot Disk* | :white_check_mark: |
+| *Adapter* | Ableconn M2MN-151M |
+
+NOTE: KIOXIA and Toshiba are the same.
+
+# Device Name
+
+```
+# lsblk | grep nvme[01]
+nvme0n1     259:0    0 119.2G  0 disk 
+```
+
+# Device Information
+
+<details>
+  <summary>Click here to expand...</summary>
+  
+  ```
+  # lspci -vvv -s 01:00.0
+  01:00.0 Non-Volatile memory controller: KIOXIA Corporation Device 0001 (prog-if 02 [NVM Express])
+    Subsystem: KIOXIA Corporation Device 0001
+    Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx+
+    Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+    Latency: 0
+    Interrupt: pin A routed to IRQ 63
+    Region 0: Memory at 600000000 (64-bit, non-prefetchable) [size=16K]
+    Capabilities: [40] Express (v2) Endpoint, MSI 00
+      DevCap:	MaxPayload 256 bytes, PhantFunc 0, Latency L0s unlimited, L1 unlimited
+        ExtTag- AttnBtn- AttnInd- PwrInd- RBE+ FLReset+ SlotPowerLimit 0.000W
+      DevCtl:	CorrErr- NonFatalErr- FatalErr- UnsupReq-
+        RlxdOrd- ExtTag- PhantFunc- AuxPwr- NoSnoop- FLReset-
+        MaxPayload 128 bytes, MaxReadReq 512 bytes
+      DevSta:	CorrErr- NonFatalErr- FatalErr- UnsupReq- AuxPwr- TransPend-
+      LnkCap:	Port #0, Speed 8GT/s, Width x4, ASPM L1, Exit Latency L1 <32us
+        ClockPM- Surprise- LLActRep- BwNot- ASPMOptComp+
+      LnkCtl:	ASPM Disabled; RCB 64 bytes, Disabled- CommClk+
+        ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
+      LnkSta:	Speed 5GT/s (downgraded), Width x1 (downgraded)
+        TrErr- Train- SlotClk+ DLActive- BWMgmt- ABWMgmt-
+      DevCap2: Completion Timeout: Range AB, TimeoutDis+ NROPrPrP- LTR+
+        10BitTagComp- 10BitTagReq- OBFF Not Supported, ExtFmt+ EETLPPrefix-
+        EmergencyPowerReduction Not Supported, EmergencyPowerReductionInit-
+        FRS- TPHComp- ExtTPHComp-
+        AtomicOpsCap: 32bit- 64bit- 128bitCAS-
+      DevCtl2: Completion Timeout: 50us to 50ms, TimeoutDis- LTR+ OBFF Disabled,
+        AtomicOpsCtl: ReqEn-
+      LnkCap2: Supported Link Speeds: 2.5-8GT/s, Crosslink- Retimer- 2Retimers- DRS-
+      LnkCtl2: Target Link Speed: 8GT/s, EnterCompliance- SpeedDis-
+        Transmit Margin: Normal Operating Range, EnterModifiedCompliance- ComplianceSOS-
+        Compliance De-emphasis: -6dB
+      LnkSta2: Current De-emphasis Level: -3.5dB, EqualizationComplete- EqualizationPhase1-
+        EqualizationPhase2- EqualizationPhase3- LinkEqualizationRequest-
+        Retimer- 2Retimers- CrosslinkRes: unsupported
+    Capabilities: [80] Power Management version 3
+      Flags: PMEClk- DSI- D1- D2- AuxCurrent=0mA PME(D0+,D1-,D2-,D3hot+,D3cold-)
+      Status: D0 NoSoftRst+ PME-Enable- DSel=0 DScale=0 PME-
+    Capabilities: [90] MSI: Enable- Count=1/32 Maskable+ 64bit+
+      Address: 0000000000000000  Data: 0000
+      Masking: 00000000  Pending: 00000000
+    Capabilities: [b0] MSI-X: Enable+ Count=32 Masked-
+      Vector table: BAR=0 offset=00002000
+      PBA: BAR=0 offset=00003000
+    Capabilities: [100 v2] Advanced Error Reporting
+      UESta:	DLP- SDES- TLP- FCP- CmpltTO- CmpltAbrt- UnxCmplt- RxOF- MalfTLP- ECRC- UnsupReq- ACSViol-
+      UEMsk:	DLP- SDES- TLP- FCP- CmpltTO- CmpltAbrt- UnxCmplt- RxOF- MalfTLP- ECRC- UnsupReq- ACSViol-
+      UESvrt:	DLP+ SDES- TLP- FCP+ CmpltTO- CmpltAbrt- UnxCmplt- RxOF+ MalfTLP+ ECRC- UnsupReq- ACSViol-
+      CESta:	RxErr- BadTLP- BadDLLP- Rollover- Timeout- AdvNonFatalErr-
+      CEMsk:	RxErr- BadTLP- BadDLLP- Rollover- Timeout- AdvNonFatalErr+
+      AERCap:	First Error Pointer: 00, ECRCGenCap- ECRCGenEn- ECRCChkCap- ECRCChkEn-
+        MultHdrRecCap- MultHdrRecEn- TLPPfxPres- HdrLogCap-
+      HeaderLog: 00000000 00000000 00000000 00000000
+    Capabilities: [150 v1] Virtual Channel
+      Caps:	LPEVC=0 RefClk=100ns PATEntryBits=1
+      Arb:	Fixed- WRR32- WRR64- WRR128-
+      Ctrl:	ArbSelect=Fixed
+      Status:	InProgress-
+      VC0:	Caps:	PATOffset=00 MaxTimeSlots=1 RejSnoopTrans-
+        Arb:	Fixed- WRR32- WRR64- WRR128- TWRR128- WRR256-
+        Ctrl:	Enable+ ID=0 ArbSelect=Fixed TC/VC=ff
+        Status:	NegoPending- InProgress-
+    Capabilities: [260 v1] Latency Tolerance Reporting
+      Max snoop latency: 0ns
+      Max no snoop latency: 0ns
+    Capabilities: [300 v1] Secondary PCI Express
+      LnkCtl3: LnkEquIntrruptEn- PerformEqu-
+      LaneErrStat: 0
+    Capabilities: [400 v1] L1 PM Substates
+      L1SubCap: PCI-PM_L1.2+ PCI-PM_L1.1- ASPM_L1.2+ ASPM_L1.1- L1_PM_Substates+
+          PortCommonModeRestoreTime=60us PortTPowerOnTime=10us
+      L1SubCtl1: PCI-PM_L1.2- PCI-PM_L1.1- ASPM_L1.2- ASPM_L1.1-
+          T_CommonMode=0us LTR1.2_Threshold=65536ns
+      L1SubCtl2: T_PwrOn=10us
+    Kernel driver in use: nvme
+  ```
+</details>
+
+# Disk Information
+
+```
+# fdisk -l /dev/nvme0n1
+Disk /dev/nvme0n1: 119.24 GiB, 128035676160 bytes, 250069680 sectors
+Disk model: KBG40ZNS128G NVMe KIOXIA 128GB          
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xcfd0ee73
+```
+
+# Filesystem Information
+
+```
+# df -Th /dev/nvme0n1
+Filesystem     Type  Size  Used Avail Use% Mounted on
+/dev/nvme0n1   ext4  117G   24K  111G   1% /mnt/sda1
+```
+
+# Benchmarks
+
+## PiBenchmarks.com
+
+Credit: [James C. Chambers](https://jamesachambers.com/) ([source](https://raw.githubusercontent.com/TheRemote/PiBenchmarks/master/Storage.sh))
+
+Full benchmark: [pibenchmarks.com #67935](https://pibenchmarks.com/benchmark/67935/)
+
+| Category | Test | Result |
+|:-|:-|:-|
+| DD | Disk Write | 121 MB/s |
+| HDParm | Disk Read | 348.32 MB/s |
+| HDParm | Cached Disk Read | 347.88 MB/s |
+| FIO | 4k Random Read | 40314 IOPS |
+| FIO | 4k Random Write | 11962 IOPS |
+| FIO | 4k Random Read | 161259 KB/s |
+| FIO | 4k Random Write | 47850 KB/s |
+| IOZone | 4k Read | 57687 KB/s |
+| IOZone | 4k Write | 51495 KB/s |
+| IOZone | 4k Random Read | 38204 KB/s |
+| IOZone | 4k Random Write | 76279 KB/s |
+| **Score** | | 14295 |
+
+## Jeff Geerling
+
+Credit: [Jeff Geerling](https://www.jeffgeerling.com/) ([source](https://raw.githubusercontent.com/geerlingguy/pi-cluster/master/benchmarks/disk-benchmark.sh))
+
+<details>
+  <summary>Click here to expand...</summary>
+
+  ```
+  Raspberry Pi disk benchmarks
+  Running fio sequential read test...
+  fio-rand-read-sequential: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=64
+  ...
+  fio-3.25
+  Starting 4 processes
+  Jobs: 4 (f=4): [R(4)][30.0%][r=388MiB/s][r=388 IOPS][eta 00m:07s]
+  Jobs: 4 (f=4): [R(4)][54.5%][r=390MiB/s][r=390 IOPS][eta 00m:05s] 
+  Jobs: 4 (f=4): [R(4)][63.6%][r=357MiB/s][r=356 IOPS][eta 00m:04s]
+  Jobs: 4 (f=4): [R(4)][81.8%][r=417MiB/s][r=416 IOPS][eta 00m:02s] 
+  Jobs: 4 (f=4): [R(4)][90.9%][r=392MiB/s][r=392 IOPS][eta 00m:01s]
+  Jobs: 4 (f=4): [R(4)][100.0%][r=392MiB/s][r=391 IOPS][eta 00m:00s]
+  fio-rand-read-sequential: (groupid=0, jobs=4): err= 0: pid=1184: Sun Mar  5 15:23:21 2023
+    read: IOPS=388, BW=389MiB/s (408MB/s)(4013MiB/10322msec)
+      slat (usec): min=128, max=60909, avg=9954.76, stdev=10506.96
+      clat (msec): min=280, max=1097, avg=640.31, stdev=104.82
+      lat (msec): min=280, max=1098, avg=650.26, stdev=105.80
+      clat percentiles (msec):
+      |  1.00th=[  355],  5.00th=[  481], 10.00th=[  498], 20.00th=[  625],
+      | 30.00th=[  634], 40.00th=[  634], 50.00th=[  642], 60.00th=[  651],
+      | 70.00th=[  651], 80.00th=[  659], 90.00th=[  676], 95.00th=[  860],
+      | 99.00th=[ 1020], 99.50th=[ 1045], 99.90th=[ 1070], 99.95th=[ 1083],
+      | 99.99th=[ 1099]
+    bw (  KiB/s): min=131072, max=516096, per=96.67%, avg=384864.00, stdev=19560.14, samples=80
+    iops        : min=  128, max=  504, avg=375.20, stdev=19.08, samples=80
+    lat (msec)   : 500=10.17%, 750=82.31%, 1000=5.88%, 2000=1.64%
+    cpu          : usr=0.19%, sys=3.54%, ctx=3142, majf=0, minf=65637
+    IO depths    : 1=0.1%, 2=0.2%, 4=0.4%, 8=0.8%, 16=1.6%, 32=3.2%, >=64=93.7%
+      submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+      complete  : 0=0.0%, 4=99.9%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+      issued rwts: total=4013,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+      latency   : target=0, window=0, percentile=100.00%, depth=64
+
+  Run status group 0 (all jobs):
+    READ: bw=389MiB/s (408MB/s), 389MiB/s-389MiB/s (408MB/s-408MB/s), io=4013MiB (4208MB), run=10322-10322msec
+
+  Disk stats (read/write):
+    nvme0n1: ios=15778/125, merge=0/2, ticks=4788604/33964, in_queue=4822780, util=99.31%
+
+  Running iozone 1024K random read and write tests...
+    Iozone: Performance Test of File I/O
+            Version $Revision: 3.492 $
+      Compiled for 64 bit mode.
+      Build: linux-arm 
+
+    Contributors:William Norcott, Don Capps, Isom Crawford, Kirby Collins
+                Al Slater, Scott Rhine, Mike Wisner, Ken Goss
+                Steve Landherr, Brad Smith, Mark Kelly, Dr. Alain CYR,
+                Randy Dunlap, Mark Montague, Dan Million, Gavin Brebner,
+                Jean-Marc Zucconi, Jeff Blomberg, Benny Halevy, Dave Boone,
+                Erik Habbinga, Kris Strecker, Walter Wong, Joshua Root,
+                Fabrice Bacchella, Zhenghua Xue, Qin Li, Darren Sawyer,
+                Vangel Bojaxhi, Ben England, Vikentsi Lapa,
+                Alexey Skidanov, Sudhir Kumar.
+
+    Run began: Sun Mar  5 15:23:22 2023
+
+    Include fsync in write timing
+    O_DIRECT feature enabled
+    Auto Mode
+    File size set to 102400 kB
+    Record Size 1024 kB
+    Command line used: ./iozone -e -I -a -s 100M -r 1024k -i 0 -i 2 -f /mnt/sda1/iozone
+    Output is in kBytes/sec
+    Time Resolution = 0.000001 seconds.
+    Processor cache size set to 1024 kBytes.
+    Processor cache line size set to 32 bytes.
+    File stride size set to 17 * record size.
+                                                                random    random     bkwd    record    stride                                    
+                kB  reclen    write  rewrite    read    reread    read     write     read   rewrite      read   fwrite frewrite    fread  freread
+            102400    1024   348917   323266                     356706   330732                                                                
+
+  iozone test complete.
+
+  Running iozone 4K random read and write tests...
+    Iozone: Performance Test of File I/O
+            Version $Revision: 3.492 $
+      Compiled for 64 bit mode.
+      Build: linux-arm 
+
+    Contributors:William Norcott, Don Capps, Isom Crawford, Kirby Collins
+                Al Slater, Scott Rhine, Mike Wisner, Ken Goss
+                Steve Landherr, Brad Smith, Mark Kelly, Dr. Alain CYR,
+                Randy Dunlap, Mark Montague, Dan Million, Gavin Brebner,
+                Jean-Marc Zucconi, Jeff Blomberg, Benny Halevy, Dave Boone,
+                Erik Habbinga, Kris Strecker, Walter Wong, Joshua Root,
+                Fabrice Bacchella, Zhenghua Xue, Qin Li, Darren Sawyer,
+                Vangel Bojaxhi, Ben England, Vikentsi Lapa,
+                Alexey Skidanov, Sudhir Kumar.
+
+    Run began: Sun Mar  5 15:23:23 2023
+
+    Include fsync in write timing
+    O_DIRECT feature enabled
+    Auto Mode
+    File size set to 102400 kB
+    Record Size 4 kB
+    Command line used: ./iozone -e -I -a -s 100M -r 4k -i 0 -i 2 -f /mnt/sda1/iozone
+    Output is in kBytes/sec
+    Time Resolution = 0.000001 seconds.
+    Processor cache size set to 1024 kBytes.
+    Processor cache line size set to 32 bytes.
+    File stride size set to 17 * record size.
+                                                                random    random     bkwd    record    stride                                    
+                kB  reclen    write  rewrite    read    reread    read     write     read   rewrite      read   fwrite frewrite    fread  freread
+            102400       4    55457    88993                      43767    84037                                                                
+
+  iozone test complete.
+
+  Disk benchmark complete!
+  ```
+</details>
