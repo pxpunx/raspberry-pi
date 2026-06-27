@@ -36,7 +36,8 @@ Most drives were tested with the use of an [Ableconn M2MN-151M](http://ableconn.
 
 # NVMe Benchmark
 
-> [!NOTE] I used Claude to automate the benchmark steps below. I've uploaded [a copy of the script](nvme_benchmark.sh). Use at your own risk.
+> [!NOTE]
+> I used Claude to automate the benchmark steps below. I've uploaded [a copy of the script](nvme_benchmark.sh). Use at your own risk.
 
 The steps I used to set up each test and collect information. Total power draw while tests were performed was between 4W and 6W on a [USW Pro 24 PoE](https://store.ui.com/collections/unifi-network-switching/products/usw-pro-24-poe) PoE++ (60W) port.
 
@@ -75,11 +76,13 @@ I used the ICY DOCK adapter and the official Raspberry Pi Imager to image the M.
 
 ## Options
 
-> [!NOTE] I used a new CM400800 for the Xerxes Pi Rev2 tests. It did not require me to update the boot configuration.
+> [!NOTE]
+> I used a new CM400800 for the Xerxes Pi Rev2 tests. It did not require me to update the boot configuration.
 
 # Enable NVMe Boot
 
-> [!NOTE] I used a new CM400800 for the Xerxes Pi Rev2 tests. It did not require me to enable NVME boot.
+> [!NOTE]
+> I used a new CM400800 for the Xerxes Pi Rev2 tests. It did not require me to enable NVME boot.
 
 # Resources
 
