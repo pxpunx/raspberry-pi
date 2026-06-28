@@ -1,6 +1,6 @@
 # Product Information
 
-| Product | [PCIe SSD 400S | PCIe M.2 SSDs - Transcend Information, Inc.](https://us.transcend-info.com/product/internal-ssd/mte400s) |
+| Product | [PCIe SSD 400S PCIe M.2 SSDs - Transcend Information, Inc.](https://us.transcend-info.com/product/internal-ssd/mte400s) |
 |:-|:-|
 |----|-----|
 | *Name* | Transcend MTE400s |
